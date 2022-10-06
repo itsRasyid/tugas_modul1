@@ -175,3 +175,11 @@ const mahasiswa = [
 
 
 ];
+
+function filtered(input) {
+    var filterArray = mahasiswa.filter(user => {
+        return user.nim === input;
+
+    })
+    
+}
