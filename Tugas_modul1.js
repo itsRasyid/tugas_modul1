@@ -107,7 +107,7 @@ const mahasiswa = [
         hobi: "Game,melukis,nonton"
     },
     {
-        ama_lengkap: "Anhar",
+        nama_lengkap: "Anhar",
         nama_panggilan: "Aan",
         nomor_telepon: "085271572462",
         id_line: "anhar.id",
@@ -170,7 +170,8 @@ const mahasiswa = [
         tanggal_lahir: "12/15/2000",
         nim: 21120119120018,
         email: "desylusianasitompul649@gmail.com",
-        hobi: "dengar musik"
+        hobi: "dengar musik",
+        link: "https://pict.sindonews.net/dyn/620/pena/news/2022/01/13/39/655579/harga-fotofoto-ghozali-bikin-melongo-ada-yang-laku-rp42-miliiar-fwx.jpg"
     }
 
 
@@ -182,49 +183,58 @@ function filtered(input) {
 
     })
 
-    document.querySelector('#tabelnya tbody').innerHTML = filterArray.length > 0 ? `
-    <tr>
-        <td colspan="3" style="font-size: 30px; font-weight: 600;">${filterArray[0].nama_lengkap}</td>
-    </tr>
-    <tr>
-        <td>Nama Lengkap</td>
-        <td>:</td>
-        <td>${filterArray[0].nama_lengkap}</td>
-    </tr>
-    <tr>
-        <td>Nama Panggilan</td>
-        <td>:</td>
-        <td>${filterArray[0].nama_panggilan}</td>
-    </tr>
-    <tr>
-        <td>NIM</td>
-        <td>:</td>
-        <td>${filterArray[0].nim}</td>
-    </tr>
-    <tr>
-        <td>Nomor Telpon</td>
-        <td>:</td>
-        <td>${filterArray[0].nomor_telepon}</td>
-    </tr>
-    <tr>
-        <td>ID Line</td>
-        <td>:</td>
-        <td>${filterArray[0].id_line}</td>
-    </tr>
-    <tr>
-        <td>Email</td>
-        <td>:</td>
-        <td>${filterArray[0].email}</td>
-    </tr>
-    <tr>
-        <td>Hobi</td>
-        <td>:</td>
-        <td>${filterArray[0].hobi}</td>
-    </tr>
-    <tr>
-        <td>Tanggal Lahir</td>
-        <td>:</td>
-        <td>${filterArray[0].tanggal_lahir}</td>
-    </tr>
-` : '<tr><td>Data tidak tersedia</td></tr>'
+
+
+    document.querySelector('.card-body').innerHTML = filterArray.length > 0 ? `
+<img class="img-fluid" src="${filterArray[0].link}" />
+    <table class="mx-auto">
+        <tr>
+            <td colspan="3" style="font-size: 30px; font-weight: 600;">${filterArray[0].nama_lengkap}</td>
+        </tr>
+        <tr>
+            <td>Nama Lengkap</td>
+            <td>:</td>
+            <td>${filterArray[0].nama_lengkap}</td>
+        </tr>
+        <tr>
+            <td>Nama Panggilan</td>
+            <td>:</td>
+            <td>${filterArray[0].nama_panggilan}</td>
+        </tr>
+        <tr>
+            <td>NIM</td>
+            <td>:</td>
+            <td>${filterArray[0].nim}</td>
+        </tr>
+        <tr>
+            <td>Nomor Telpon</td>
+            <td>:</td>
+            <td>${filterArray[0].nomor_telepon}</td>
+        </tr>
+        <tr>
+            <td>ID Line</td>
+            <td>:</td>
+            <td>${filterArray[0].id_line}</td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>:</td>
+            <td>${filterArray[0].email}</td>
+        </tr>
+        <tr>
+            <td>Hobi</td>
+            <td>:</td>
+            <td>${filterArray[0].hobi}</td>
+        </tr>
+        <tr>
+            <td>Tanggal Lahir</td>
+            <td>:</td>
+            <td>${filterArray[0].tanggal_lahir}</td>
+        </tr>
+        </table>
+        
+    ` : '<tr><td>Data tidak tersedia</td></tr>'
+    // return filterArray
 }
+// console.log(filterArray);
+
